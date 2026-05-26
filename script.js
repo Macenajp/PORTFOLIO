@@ -1,13 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const copyrightElement = document.getElementById('copyright');
-    const currentYear = new Date().getFullYear();                                                               // Com isso vai atualizar o ano automaticamente no footer
 
-    copyrightElement.textContent = `© ${currentYear} João Pedro Macena Correa. Todos os direitos reservados.`;  // Vai atualizra o texto (ano) do rodapé
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    
     const copyrightElement = document.getElementById('copyright');
     if (copyrightElement) {
         const currentYear = new Date().getFullYear();
@@ -19,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const respostaOllama = document.getElementById('resposta-ollama');
 
     if (enviarBtn && promptInput && respostaOllama) {
-        
+
         enviarBtn.addEventListener('click', function() {
-            
+
             const promptTexto = promptInput.value;
             if (!promptTexto) {
                 alert("Por favor, digite algo no campo de prompt.");
@@ -29,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             enviarBtn.textContent = "Processando...";
-            enviarBtn.style.pointerEvents = 'none'; 
+            enviarBtn.style.pointerEvents = 'none';
             respostaOllama.textContent = "Pensando...";
 
             fetch('http://localhost:5000/api/processar', {
@@ -49,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (data.response) {
                     respostaOllama.textContent = data.response;
                 } else if (data.erro) {
-                     respostaOllama.textContent = `Erro: ${data.erro}`;
+                    respostaOllama.textContent = `Erro: ${data.erro}`;
                 } else {
                     respostaOllama.textContent = "Erro: A resposta não veio no formato esperado.";
                 }
@@ -60,23 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .finally(() => {
                 enviarBtn.textContent = "Enviar";
-                enviarBtn.style.pointerEvents = 'auto'; 
+                enviarBtn.style.pointerEvents = 'auto';
             });
         });
     }
 });
-
-
-            fetch('http://localhost:5000/api/processar', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ prompt: promptTexto })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.response) {
-                    respostaOllama.textContent = data.response;
-                }
-})
