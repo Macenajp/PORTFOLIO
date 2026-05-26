@@ -5,24 +5,27 @@
     padding: 1rem 0;
     width: 100%;
     top: 0;
-    
-}
-.logoTexto {
-    justify-content: center;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 2rem;
-    display: flex;
-    color: white;
-    
 }
 
-.logoTexto2{
-    justify-content: center;
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logoTexto {
     text-decoration: none;
     font-weight: 700;
     font-size: 2rem;
-    display: flex;
+    display: block;
+    color: white;
+    text-align: center;
+}
+
+.logoTexto2 {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 2rem;
     color: white;
 }
 
@@ -100,24 +103,24 @@ body {
 .geral {
     align-items: center;
     text-align: center;
-    margin-top: auto;
     min-height: 35vh;
+    padding: 3rem 0;
     display: flex;
 }
 
 .geral2 {
     align-items: center;
     text-align: center;
-    min-height: 40vh;
-    margin-top: -50px;
+    min-height: 35vh;
+    padding: 3rem 0;
     display: flex;
 }
 
 .geral3 {
     align-items: center;
     text-align: center;
-    min-height:55vh;
-    margin-top: -20px;
+    min-height: 50vh;
+    padding: 3rem 0;
     display: flex;
 }
 
@@ -201,7 +204,6 @@ body {
     border-top: 1px solid #333;
     background-color: #1e1e1e;
     text-align: center;
-    margin-top: -20px;
     padding: 2rem 0;
 }
 
@@ -212,8 +214,16 @@ body {
         padding: 0 1rem;
     }
 
-    .geral, .geral2 {
-        flex-direction: column;
+    .logoTexto,
+    .logoTexto2 {
+        font-size: 1.4rem;
+    }
+
+    .home {
+        font-size: 1rem;
+    }
+
+    .geral, .geral2, .geral3 {
         min-height: auto;
         padding: 2rem 0;
     }
@@ -222,9 +232,13 @@ body {
         font-size: 2rem;
     }
 
+    .geral-tituloNome2 {
+        font-size: 1.5rem;
+    }
+
     .geral-subtitulo {
         font-size: 1rem;
-        padding: 0 1rem;
+        padding: 0 0.5rem;
     }
 
     .geral-botoes {
@@ -240,11 +254,15 @@ body {
 
     .projetos {
         grid-template-columns: 1fr;
-        padding: 0 1rem;
+        padding: 0;
     }
 
     .projetosCaixas {
         padding: 1rem;
+    }
+
+    .titulosDasSessões {
+        font-size: 1.8rem;
     }
 }
 
