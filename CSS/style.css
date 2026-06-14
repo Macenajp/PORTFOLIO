@@ -1,0 +1,247 @@
+/* Área inicial */
+.header {
+    background-color: rgba(18, 18, 18, 0.8);
+    position: relative;
+    padding: 1rem 0;
+    width: 100%;
+    top: 0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logoTexto {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 2rem;
+    display: block;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+/* Fonte e etc */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    line-height: 1.6;
+    color: white;
+}
+
+
+
+
+.container {
+    max-width: 1100px;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+
+.botaoDeRedesSociais {
+    border: 1px solid #86e0fc;
+    transition: all 0.3s ease;
+    padding: 0.75rem 4.25rem;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #86e0fc;
+
+}
+
+.botaoDeRedesSociais:hover {
+    background-color: #86e0fc;
+    transform: scale(1.1);
+    color: #121212;
+}
+
+
+/* Apresentação - Sobre mim */
+.geral {
+    align-items: center;
+    text-align: center;
+    min-height: 35vh;
+    padding: 3rem 0;
+    display: flex;
+}
+
+.geral-tituloNome {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #86e0fc;
+}
+
+.geral-tituloNome2{
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #86e0fc;
+}
+
+.geral-subtitulo {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 2rem;
+    color: #b0b0b0;
+}
+
+.botoesIntroducao {
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+/* Seção de introdução Geral */
+.divisaoIntroducao {
+    position: relative;
+    min-height: 80vh;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    
+}
+
+/* Seção de introdução | Personalizaçào do bloco esquerdo */
+.blocoEsquerdoIntroducao {    
+    padding: 4rem 3rem 4rem 10%;
+    background-color: #121212;
+    align-items: center;
+    display: flex;
+    z-index: 1;
+    flex: 1.2;
+    
+}
+
+
+.tituloIntroducao {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    max-width: 550px;
+    font-weight: 700;
+    color: #86e0fc;
+    line-height: 1.2;
+
+}
+
+.descricaoIntroducao {
+    margin-bottom: 2.5rem;
+    text-align: justify;
+    font-size: 1.1rem;
+    max-width: 610px;
+    line-height: 1.7;
+    color: #b0b0b0;
+
+}
+
+.botoesIntroducao {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+    
+}
+
+/* Seção de introdução | Personalizaçào do bloco direito */
+.blocoDireitoIntroducao {
+    background-color: #86e0fc; 
+    flex: 0.8;
+
+}
+
+
+
+
+
+
+/* Seção de personalização da foto */
+.containerFoto {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 10;
+    scale: 1.2;
+    left: 65%;
+    top: 57%;
+    
+}
+
+.fotoIntroducao {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    border-radius: 4px;
+    object-fit: cover;
+    height: 380px;
+    width: 320px;
+
+}
+
+.fotoIntroducao:hover {
+    transition: border 0.6s ease;
+    border: 2px solid #86e0fc; 
+    transform: scale(1.05);
+    
+}
+
+
+
+
+
+/* Seção de rodapé | Personalização do footer */
+.footer {
+    border-top: 1px solid #333;
+    background-color: #1e1e1e;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+
+
+
+
+/* Responsividade para Ecrãs Pequenos (Telemóveis) */
+@media (max-width: 992px) {
+    .divisaoIntroducao {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .blocoEsquerdo {
+        padding: 3rem 2rem;
+        order: 2;
+    }
+
+    .blocoDireitoIntroducao {
+        height: 200px;
+        order: 1;
+    }
+
+    .containerFoto {
+        transform: translate(-50%, -50%);
+        margin-bottom: -100px;
+        position: relative;
+        text-align: center;
+        left: 50%;
+        order: 1;
+        top: 0;
+        
+    }
+
+    .fotoIntroducao {
+        height: 280px;
+        width: 240px;
+    }
+}

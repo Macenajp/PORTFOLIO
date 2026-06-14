@@ -5,80 +5,123 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>JP | Portfólio</title>
-        <link rel="stylesheet" href="style.css">
+
+        <link rel="stylesheet" href="CSS/style.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
 
         <link rel="icon" href="favicon.png" type="image/x-icon">
-        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-        
+        <link rel="shortcut icon" href="IMG/favicon.png" type="image/x-icon">
     </head>
 
-<body>
-    <header class="header">
-        <div class="container">
-                <h3 class="logoTexto">JP | Portfólio</h3>
-        </div>
-    </header>
 
-    <main>
-        <section class="geral">
+    <body>
+        <header class="header">
             <div class="container">
-                <div class="geral-conteudo">
-                    <h1 class="geral-tituloNome">João Pedro Macena Correa</h1>
-                    <p class="geral-subtitulo">Olá, me chamo João Pedro, tenho 18 anos e iniciei minha jornada no ensino superior na PUCPR agora em 2025. Sou natural da Bahia, e moro em Curitiba desde 2018. Almejo seguir carreira em IA e/ou em cibersegurança, em cooperação com as Forças Armadas do Brasil. Meu Github ainda não tem muitos projetos ainda, pois, direcionei a maior parte do meu tempo aos estudos, mas fique à vontade para visitar meu perfil, criticá-lo ou me dar dicas de estudo e ideias para projetos!</p>
-                    <div class="geral-botoes">
-                        <a href="https://github.com/Macenajp" target="_blank" title="Meu perfil no GitHub" class="botaoGeral">Github</a>
-                        <a href="https://www.linkedin.com/in/macenajp/" target="_blank" title="Meu perfil no LinkedIn" class="botaoGeral">LinkedIn</a>
-                        <a href="mailto:joaomacenactba@gmail.com" target="_blank" title="E-mail de contato" class="botaoGeral">Email</a>
-                        <!-- <a href="https://github.com/sponsors/Macenajp/button" target="_blank" title="Github sponsor" class="botaoGeral">Apoie</a> -->
-                    </div>
-                </div>  
+                    <h3 class="logoTexto">JP | Portfólio</h3>
             </div>
-        </section>
+        </header>
 
-        <section class="geral2">
-            <div class="container">
-                <div class="geral-conteudo">
-                    <h1 class="geral-tituloNome2">Aprendizado do curso bacharelado</h1>
-                    <p class="geral-subtitulo">Confira alguns projetos e trabalhos realizados no primeiro período do meu curso da universidade!</p>
-                    <div class="geral-botoes">
-                        <a href="projects.html" class="botaoGeral">Confira aqui alguns projetos!</a>
+
+
+        <main>
+            <!-- Seção de introdução pessoal -->
+            <!-- Bloco esquerdo para a descrição -->
+            <section class="divisaoIntroducao">
+                <div class="blocoEsquerdoIntroducao">
+                    <div>
+                        <h1 class="tituloIntroducao">Seja bem-vindo!</h1>
+                        <p class="descricaoIntroducao">
+                            Chamo-me João Pedro, tenho 19 anos e iniciei a minha jornada no curso de Ciência da Computação na PUCPR em 2025. Apesar da maior parte dos projetos que realizei, tanto individualmente, quanto em grupo possuirem um foco maior em Frontend e Backend, possuo forte interesse em inteligência artificial e LLMs, e em cibersegurança. Estou sempre disposto a aprender e aprimorar minhas habilidades nas mais diversas áreas da tecnologia. Conheça alguns dos meus projetos logo abaixo ou entre em contato!
+                        </p>
+
+                        <!-- Botões de redes sociais -->
+                        <div class="botoesIntroducao">
+                            <a href="https://github.com/Macenajp" target="_blank" title="Meu perfil no GitHub" class="botaoDeRedesSociais">GitHub</a>
+                            <a href="https://www.linkedin.com/in/macenajp/" target="_blank" title="Meu perfil no LinkedIn" class="botaoDeRedesSociais">LinkedIn</a>
+                            <a href="mailto:correa.macenajp@gmail.com" target="_blank" title="E-mail de contato" class="botaoDeRedesSociais">Email</a>
+                        </div>
                     </div>
-                </div>  
-            </div>
-        </section>
-     <!---   
-        <section class="geral3">
-            <div class="container">
-                <div class="geral-conteudo">
-                    <h1 class="geral-tituloNome2">Ollama Integrado</h1>
-                    <p class="geral-subtitulo">
-                        Integração do Ollama com meu portfólio (modelo de linguagem usado: gemma3:4b)
-                    </p>
+                </div>
+
+                <!-- Bloco direito a foto -->
+                <div class="blocoDireitoIntroducao"></div>
+
+                <div class="containerFoto">
+                    <img src="IMG/profilePic.png" alt="Foto de João Pedro" class="fotoIntroducao">
+                </div>
+            </section>
+
+
+            <!-- Seção de caminho para os projetos acadêmicos e pessoais -->
+            <section class="blocoParaProjetos">
+                <div class="container">
                     
-                    <textarea id="prompt-input" rows="4" placeholder="Digite aqui..."></textarea>
+                    <h2 class="tituloCategoria">Projetos Pessoais</h2>
+                    <p class="subtituloCategoria">Aplicações e iniciativas desenvolvidas de forma autónoma para expandir conhecimentos.</p>
                     
-                    <div class="geral-botoesPrompt">
-                        <a id="enviar-btn" class="botaoGeral" style="cursor: pointer;">Enviar</a>
+                    <div class="gradeDasCategorias">
+                        <div class="projeto-card-novo">
+                            <div class="tagProjeto">Desenvolvimento Pessoal</div>
+                            <h3>Plataforma de Gestão Diária</h3>
+                            <p>Aplicação focada no registo de hábitos e metas, com integração de modelos de linguagem (LLMs) executados localmente via Ollama.</p>
+                            <div class="tecnologias">
+                                <span>Python</span> <span>Ollama</span> <span>JavaScript</span>
+                            </div>
+                            <a href="#" target="_blank" class="botao-link">Ver Repositório</a>
+                        </div>
                     </div>
 
-                    <div id="resposta-container">
-                        <h3 class="projetoTitulo" style="margin-top: 2rem;">Resposta:</h3>
-                        <pre id="resposta-ollama">Aguarde...</pre>
+                    <h2 class="tituloCategoria" style="margin-top: 5rem;">Trabalhos Acadêmicos</h2>
+                    <p class="subtituloCategoria">Projetos desenvolvidos ao longo dos semestres da licenciatura em Ciência da Computação.</p>
+
+                    <div class="periodo-bloco">
+                        <h3 class="tituloPeriodo">1º Período</h3>
+                        <div class="projetos-grid">
+                            
+                            <div class="projeto-card-novo academico">
+                                <span class="disciplina-tag">Experiência Criativa</span>
+                                <h3>Site - Exímio</h3>
+                                <p>Plataforma web colaborativa desenvolvida com HTML, CSS e JavaScript para o público do ensino básico.</p>
+                                <a href="https://github.com/Macenajp/BCC-PUCPR/tree/main/01%20-%20PRIMEIRO%20PER%C3%8DODO/03%20-%20EXPERI%C3%8ANCIA%20CRIATIVA/TRABALHO%20WEB/ARQUIVOS" target="_blank" class="botao-link">Ver Projeto</a>
+                            </div>
+
+                            <div class="projeto-card-novo academico">
+                                <span class="disciplina-tag">Fundamentos de Sistemas Ciberfísicos</span>
+                                <h3>ESP32 - Alarme</h3>
+                                <p>Sistema de alarme sonoro e visual utilizando microcontrolador ESP32 e MicroPython.</p>
+                                <a href="https://wokwi.com/projects/432200098511204353" target="_blank" class="botao-link">Ver Simulação</a>
+                            </div>
+
+                        </div>
                     </div>
 
-                </div>  
+                    </div>
+            </section>
+
+
+
+
+
+            <!-- Seção de caminho para os projetos realizados -->
+            <section class="gera1">
+                <div class="container">
+                    <div class="geral-conteudo">
+                        <h1 class="geral-tituloNome">Aprendizado do curso bacharelado</h1>
+                        <p class="geral-subtitulo">Confira alguns projetos e trabalhos realizados no primeiro período do meu curso da universidade!</p>
+                        <div class="geral-botoes">
+                            <a href="projects.html" class="botaoGeral">Confira aqui alguns projetos!</a>
+                        </div>
+                    </div>  
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p id="copyright">©     João Pedro Macena Correa. Todos os direitos reservados.</p>
             </div>
-        </section>
---->
-    </main>
+        </footer>
 
-    <footer class="footer">
-        <div class="container">
-            <p id="copyright">©     João Pedro Macena Correa. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
