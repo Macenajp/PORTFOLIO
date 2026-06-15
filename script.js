@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Seção dos filtros para os projetos
     const botoesFiltro = document.querySelectorAll('.botaoFiltro'); // Corrigido de .btn-filtro para .botaoFiltro
     const todosProjetos = document.querySelectorAll('.projetosCaixas');
-    const blocosCategoria = document.querySelectorAll('.categoria-projetos');
+    const blocosCategoria = document.querySelectorAll('.categoriaDosProjetos');
 
     botoesFiltro.forEach(botao => {
         botao.addEventListener('click', function() {
