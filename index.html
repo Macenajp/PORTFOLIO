@@ -50,69 +50,89 @@
                     <img src="IMG/profilePic.png" alt="Foto de João Pedro" class="fotoIntroducao">
                 </div>
             </section>
+           
 
-
-            <!-- Seção de caminho para os projetos acadêmicos e pessoais -->
-            <section class="blocoParaProjetos">
+            <!-- Seção de exposição para os meus projetos realizados -->
+            <section id="projetos" class="secaoProjetos">
                 <div class="container">
+                    <h2 class="titulosDasSessoes">Meus Projetos</h2>
                     
-                    <h2 class="tituloCategoria">Projetos Pessoais</h2>
-                    <p class="subtituloCategoria">Aplicações e iniciativas desenvolvidas de forma autónoma para expandir conhecimentos.</p>
-                    
-                    <div class="gradeDasCategorias">
-                        <div class="projeto-card-novo">
-                            <div class="tagProjeto">Desenvolvimento Pessoal</div>
-                            <h3>Plataforma de Gestão Diária</h3>
-                            <p>Aplicação focada no registo de hábitos e metas, com integração de modelos de linguagem (LLMs) executados localmente via Ollama.</p>
-                            <div class="tecnologias">
-                                <span>Python</span> <span>Ollama</span> <span>JavaScript</span>
-                            </div>
-                            <a href="#" target="_blank" class="botao-link">Ver Repositório</a>
-                        </div>
+                    <div class="barraFiltros">
+                        <button class="botaoFiltro ativo" data-filter="todos">Todos</button>
+                        <button class="botaoFiltro" data-filter="python">Python</button>
+                        <button class="botaoFiltro" data-filter="web">Web (HTML/CSS/JS)</button>
+                        <button class="botaoFiltro" data-filter="ia">Inteligência Artificial</button>
+                        <button class="botaoFiltro" data-filter="redes">Redes & Cibersegurança</button>
                     </div>
 
-                    <h2 class="tituloCategoria" style="margin-top: 5rem;">Trabalhos Acadêmicos</h2>
-                    <p class="subtituloCategoria">Projetos desenvolvidos ao longo dos semestres da licenciatura em Ciência da Computação.</p>
 
-                    <div class="periodo-bloco">
-                        <h3 class="tituloPeriodo">1º Período</h3>
-                        <div class="projetos-grid">
+                    <!-- Bloco com os projetos pessoais e independentes -->
+                    <div class="categoria-projetos" id="bloco-pessoais">
+                        <h3 class="tituloSubcategoria">Projetos Pessoais</h3>
+                        <div class="projetos">
                             
-                            <div class="projeto-card-novo academico">
-                                <span class="disciplina-tag">Experiência Criativa</span>
-                                <h3>Site - Exímio</h3>
-                                <p>Plataforma web colaborativa desenvolvida com HTML, CSS e JavaScript para o público do ensino básico.</p>
-                                <a href="https://github.com/Macenajp/BCC-PUCPR/tree/main/01%20-%20PRIMEIRO%20PER%C3%8DODO/03%20-%20EXPERI%C3%8ANCIA%20CRIATIVA/TRABALHO%20WEB/ARQUIVOS" target="_blank" class="botao-link">Ver Projeto</a>
+
+                            <div class="projetosCaixas" data-tech="redes">
+                                <h3 class="projetoTitulo">Otimização de Infraestrutura de Rede</h3>
+                                <p class="projetoDescricao">O projeto foi realizado com o foco em reconstrução, organização e otimização da rede local (LAN/WLAN), onde forneceria a garantia da ciência de cada dispositivo online na rede, como também a configuração de IP customizadas e boas práticas de cibersegurança (Hardening), incluindo a adoção de protocolos WPA3, correção de vulnerabilidades, mapeamento via Nmap e o gerenciamento centralizado da integridade de endpoints para múltiplos dispositivos locais.</p>
+                                <p class="projetoTags">Tags: <span>Redes</span><span>Infraestrutura & Segurança</span></p>
+                                <a href="#" class="botaoDosProjetos" style="opacity: 0.5; pointer-events: none;">Projeto local</a>
                             </div>
 
-                            <div class="projeto-card-novo academico">
-                                <span class="disciplina-tag">Fundamentos de Sistemas Ciberfísicos</span>
-                                <h3>ESP32 - Alarme</h3>
-                                <p>Sistema de alarme sonoro e visual utilizando microcontrolador ESP32 e MicroPython.</p>
-                                <a href="https://wokwi.com/projects/432200098511204353" target="_blank" class="botao-link">Ver Simulação</a>
-                            </div>
 
+                            <div class="projetosCaixas" data-tech="python ia">
+                                <h3 class="projetoTitulo">DailyTasks</h3>
+                                <p class="projetoDescricao">Plataforma/aplicação voltada para registrar hábitos diários, metas e tarefas, com integração de IA local (LLMs) via framework Ollama.</p>
+                                <p class="projetoTags">Tags: <span>Web</span></Wev><span>Python</span><span>Ollama</span></p>
+                                <a href="https://github.com/Macenajp/dailyTasksApp/tree/main" target="_blank" class="botaoDosProjetos">Em andamento</a>
+                            </div>
                         </div>
                     </div>
 
-                    </div>
-            </section>
 
 
+                    <!-- Bloco com os projetos individuais e coletivos realizados pela faculdade -->
+                    <div class="categoriaDosProjetos">
+                        <h3 class="tituloSubcategoria">Projetos Acadêmicos (PUCPR)</h3>
+                        <div class="projetos">
 
+                            <div class="projetosCaixas" data-tech="processing   " data-periodo="1periodo">
+                                <h3 class="projetoTitulo">Exímio - App</h3>
+                                <p class="projetoDescricao">Aplicação desenvolvida em Processing com temas de estudos de sustentabilidade, voltadado para o público de ensino básico e crianças.</p>
+                                <p class="projetoTags">Disciplina: Experiência criativa (1º Período)</p>
+                                <a href="https://github.com/Macenajp/BCC-PUCPR/tree/main/01%20-%20PRIMEIRO%20PER%C3%8DODO/03%20-%20EXPERI%C3%8ANCIA%20CRIATIVA/TRABALHO%20APP/ARQUIVOS" target="_blank" class="botaoDosProjetos">Veja</a>
+                            </div>
 
+                            <div class="projetosCaixas" data-tech="web" data-periodo="1periodo">
+                                <h3 class="projetoTitulo">Exímio - Web</h3>
+                                <p class="projetoDescricao">Variação de uma aplicação voltada para o público do ensino básico. Idealmente igual, porém com mais funcionalidades e atualizações.</p>
+                                <p class="projetoTags">Disciplina: Experiência criativa (1º Período)</p>
+                                <a href="https://projeto-eximio.netlify.app/" target="_blank" class="botaoDosProjetos">Veja</a>
+                                <a href="https://github.com/Macenajp/BCC-PUCPR/tree/main/01%20-%20PRIMEIRO%20PER%C3%8DODO/03%20-%20EXPERI%C3%8ANCIA%20CRIATIVA/TRABALHO%20WEB/ARQUIVOS" target="_blank" class="botaoDosProjetos"></a>
+                            </div>
 
-            <!-- Seção de caminho para os projetos realizados -->
-            <section class="gera1">
-                <div class="container">
-                    <div class="geral-conteudo">
-                        <h1 class="geral-tituloNome">Aprendizado do curso bacharelado</h1>
-                        <p class="geral-subtitulo">Confira alguns projetos e trabalhos realizados no primeiro período do meu curso da universidade!</p>
-                        <div class="geral-botoes">
-                            <a href="projects.html" class="botaoGeral">Confira aqui alguns projetos!</a>
+                            <div class="projetosCaixas" data-tech="python" data-periodo="1periodo">
+                                <h3 class="projetoTitulo">Jokenpô</h3>
+                                <p class="projetoDescricao">Projeto colaborativo em dupla, desenvolvido a partir de Python. Possui três modalidades de jogo: PvP, PvE e EvE.</p>
+                                <p class="projetoTags">Disciplina: Raciocínio Algorítmico (1º Período)</p>
+                                <a href="https://github.com/Macenajp/BCC-PUCPR/blob/main/01%20-%20PRIMEIRO%20PER%C3%8DODO/02%20-%20RACIOC%C3%8DNIO%20ALGOR%C3%8DTMICO/TDE4%20-%20COLABORATIVO/jokenp%C3%B4Final.py" target="_blank" class="botaoDosProjetos">Veja</a>
+                            </div>
+
+                            <div class="projetosCaixas" data-tech="python" data-periodo="1periodo">
+                                <h3 class="projetoTitulo">Máquina de Vendas</h3>
+                                <p class="projetoDescricao">Trabalho colaborativo feito em Python, voltado para a criação de uma máquina de vendas com gestão de stock e sistema de troco.</p>
+                                <p class="projetoTags">Disciplina: Raciocínio Algorítmico (1º Período)</p>
+                                <a href="https://github.com/Macenajp/BCC-PUCPR/blob/main/01%20-%20PRIMEIRO%20PER%C3%8DODO/02%20-%20RACIOC%C3%8DNIO%20ALGOR%C3%8DTMICO/TDE7%20-%20COLABORATIVO/maquinaComentado.py" target="_blank" class="botaoDosProjetos">Veja</a>
+                            </div>
+
+                            
+
+                            
                         </div>
-                    </div>  
+                    </div>
                 </div>
+
+
             </section>
         </main>
 

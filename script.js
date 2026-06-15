@@ -1,8 +1,9 @@
+// Com isso vai atualizar o ano automaticamente no footer
 document.addEventListener('DOMContentLoaded', function() {
     const copyrightElement = document.getElementById('copyright');
-    const currentYear = new Date().getFullYear();                                                               // Com isso vai atualizar o ano automaticamente no footer
+    const currentYear = new Date().getFullYear();                                                              
 
-    copyrightElement.textContent = `© ${currentYear} João Pedro Macena Correa. Todos os direitos reservados.`;  // Vai atualizra o texto (ano) do rodapé
+    copyrightElement.textContent = `© ${currentYear} João Pedro Macena Correa. Todos os direitos reservados.`; 
 });
 
 
@@ -13,70 +14,47 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentYear = new Date().getFullYear();
         copyrightElement.textContent = `© ${currentYear} João Pedro Macena Correa. Todos os direitos reservados.`;
     }
-
-    const enviarBtn = document.getElementById('enviar-btn');
-    const promptInput = document.getElementById('prompt-input');
-    const respostaOllama = document.getElementById('resposta-ollama');
-
-    if (enviarBtn && promptInput && respostaOllama) {
-        
-        enviarBtn.addEventListener('click', function() {
-            
-            const promptTexto = promptInput.value;
-            if (!promptTexto) {
-                alert("Por favor, digite algo no campo de prompt.");
-                return;
-            }
-
-            enviarBtn.textContent = "Processando...";
-            enviarBtn.style.pointerEvents = 'none'; 
-            respostaOllama.textContent = "Pensando...";
-
-            fetch('http://localhost:5000/api/processar', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ prompt: promptTexto })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Erro na API: ${response.statusText}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.response) {
-                    respostaOllama.textContent = data.response;
-                } else if (data.erro) {
-                     respostaOllama.textContent = `Erro: ${data.erro}`;
-                } else {
-                    respostaOllama.textContent = "Erro: A resposta não veio no formato esperado.";
-                }
-            })
-            .catch(error => {
-                console.error('Erro na requisição fetch:', error);
-                respostaOllama.textContent = `Erro ao conectar com o backend. Confira se o 'app.py' está rodando. Detalhe: ${error.message}`;
-            })
-            .finally(() => {
-                enviarBtn.textContent = "Enviar";
-                enviarBtn.style.pointerEvents = 'auto'; 
-            });
-        });
-    }
 });
 
 
-            fetch('http://localhost:5000/api/processar', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ prompt: promptTexto })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.response) {
-                    respostaOllama.textContent = data.response;
+
+// Seção de filtro para os projetos
+document.addEventListener('DOMContentLoaded', function() {
+    const botoesFiltro = document.querySelectorAll('.btn-filtro');
+    const todosProjetos = document.querySelectorAll('.projetosCaixas');
+    const blocosCategoria = document.querySelectorAll('.categoria-projetos');
+
+    botoesFiltro.forEach(botao => {
+        botao.addEventListener('click', function() {
+            botoesFiltro.forEach(b => b.classList.remove('ativo')); 
+            this.classList.add('ativo');
+
+            const filtroSelecionado = this.getAttribute('data-filter');
+            let projetosVisiveis = 0;
+
+            todosProjetos.forEach(projeto => {
+                const tecnologias = projeto.getAttribute('data-tech') || "";
+                const periodo = projeto.getAttribute('data-periodo') || "";
+
+                if (filtroSelecionado === 'todos' || 
+                    tecnologias.includes(filtroSelecionado) || 
+                    periodo.includes(filtroSelecionado)) {
+                    
+                    projeto.classList.remove('escondido');
+                    projetosVisiveis++;
+                } else {
+                    projeto.classList.add('escondido');
                 }
-})
+            });
+
+            blocosCategoria.forEach(bloco => {
+                const projetosNoBloco = bloco.querySelectorAll('.projetosCaixas:not(.escondido)');
+                if(projetosNoBloco.length === 0) {
+                    bloco.style.display = 'none';
+                } else {
+                    bloco.style.display = 'block';
+                }
+            });
+        });
+    });
+});

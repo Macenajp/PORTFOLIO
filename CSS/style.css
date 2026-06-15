@@ -8,18 +8,20 @@
 }
 
 .nav {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    display: flex;
+    
 }
 
 .logoTexto {
     text-decoration: none;
+    text-align: center;
     font-weight: 700;
     font-size: 2rem;
     display: block;
     color: white;
-    text-align: center;
+    
 }
 
 
@@ -38,9 +40,6 @@ body {
     line-height: 1.6;
     color: white;
 }
-
-
-
 
 .container {
     max-width: 1100px;
@@ -70,41 +69,12 @@ body {
 
 
 /* Apresentação - Sobre mim */
-.geral {
-    align-items: center;
-    text-align: center;
-    min-height: 35vh;
-    padding: 3rem 0;
-    display: flex;
-}
-
-.geral-tituloNome {
-    margin-bottom: 1rem;
-    font-weight: 700;
-    font-size: 3rem;
-    color: #86e0fc;
-}
-
-.geral-tituloNome2{
-    margin-bottom: 1rem;
-    font-weight: 700;
-    font-size: 2rem;
-    color: #86e0fc;
-}
-
-.geral-subtitulo {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    margin-bottom: 2rem;
-    color: #b0b0b0;
-}
-
 .botoesIntroducao {
     justify-content: center;
     flex-wrap: wrap;
     display: flex;
     gap: 1rem;
 }
-
 
 
 /* Seção de introdução Geral */
@@ -200,6 +170,153 @@ body {
 
 
 
+/* Seção dos projetos e filtros */
+.secaoProjetos {
+    background-color: #121212;
+    padding: 5rem 0;
+    
+}
+
+.titulosDasSessoes {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #86e0fc;
+    
+}
+
+.tituloSubcategoria {
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #ffffff;
+   
+}
+
+/* Barra dos filtros */
+.barraFiltros {
+    justify-content: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+}
+
+.botaoFiltro {
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #b0b0b0;
+    
+}
+
+.botaoFiltro:hover, .botaoFiltro.ativo {
+    background-color: #86e0fc;
+    border-color: #86e0fc;
+    font-weight: 600;
+    color: #121212;
+    
+}
+
+
+
+
+
+/* Seção do layout do projetos | Personalizaçõa dos projetos */
+.projetos {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: grid;
+    gap: 2rem;
+
+}
+
+.projetosCaixas {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: space-between;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    flex-direction: column;
+    text-align: justify;
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    
+}
+
+.projetosCaixas:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    border-color: #86e0fc;
+}
+
+.categoriaDosProjetos{
+    margin-top: 4rem;
+}
+
+.projetoTitulo {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #86e0fc;
+    
+}
+
+.projetoDescricao {
+    margin-bottom: 1.5rem;
+    color: #d1d1d1;
+    font-size: 1rem;
+    flex-grow: 1; 
+    
+}
+
+.projetoTags {
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: #888;
+    
+}
+
+.projetoTags span {
+    margin-right: 8px;
+    color: #86e0fc;
+    
+}
+
+.botaoDosProjetos {
+    border: 1px solid #86e0fc;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 0.75rem 0;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #86e0fc;
+    display: block;
+    width: 100%;
+
+}
+
+.botaoDosProjetos:hover {
+    background-color: #86e0fc;
+    color: #121212;
+
+}
+
+.escondido {
+    display: none !important;
+
+}
+
+
+
+
+
 /* Seção de rodapé | Personalização do footer */
 .footer {
     border-top: 1px solid #333;
@@ -212,7 +329,28 @@ body {
 
 
 
-/* Responsividade para Ecrãs Pequenos (Telemóveis) */
+/* Responsividade geral do site */
+@media (min-width: 1360px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .projetos {
+        grid-template-columns: 1fr; 
+    }
+    .barraFiltros {
+        flex-direction: column;
+        align-items: center;
+    }
+    .botaoFiltro {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
 @media (max-width: 992px) {
     .divisaoIntroducao {
         flex-direction: column;
