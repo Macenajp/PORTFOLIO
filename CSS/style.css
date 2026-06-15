@@ -42,23 +42,28 @@ body {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1280px;
     padding: 0 2rem;
     margin: 0 auto;
+    width: 100%;
+
 }
 
 
 .botaoDeRedesSociais {
     border: 1px solid #86e0fc;
     transition: all 0.3s ease;
-    padding: 0.75rem 4.25rem;
-    display: inline-block;
+    justify-content: center;
     text-decoration: none;
+    padding: 0.75rem 2rem;
+    display: inline-flex;
+    align-items: center;
     text-align: center;
     border-radius: 5px;
     font-weight: 500;
+    min-width: 140px;
     color: #86e0fc;
-
+    
 }
 
 .botaoDeRedesSociais:hover {
@@ -144,13 +149,14 @@ body {
 }
 
 .fotoIntroducao {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0,0,0,.4);
+    transition: transform .3s ease;
+    width: min(320px, 85vw);
+    aspect-ratio: 320 / 380;
     border-radius: 4px;
     object-fit: cover;
-    height: 380px;
-    width: 320px;
-
+    height: auto;
+    
 }
 
 .fotoIntroducao:hover {
@@ -200,7 +206,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem; 
+    gap: 0.5rem; /* Dá um espacinho entre a logo do GitHub e a palavra */
 }
 
 
@@ -363,9 +369,9 @@ body {
         min-height: auto;
     }
 
-    .blocoEsquerdo {
-        padding: 3rem 2rem;
-        order: 2;
+    .blocoEsquerdoIntroducao {
+    padding: 3rem 2rem;
+    order: 2;
     }
 
     .blocoDireitoIntroducao {
@@ -387,5 +393,86 @@ body {
     .fotoIntroducao {
         height: 280px;
         width: 240px;
+    }
+}
+
+
+
+@media (max-width: 992px) {
+
+    .divisaoIntroducao {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .blocoEsquerdoIntroducao {
+        padding: 3rem 2rem;
+        order: 2;
+    }
+
+    .blocoDireitoIntroducao {
+        height: 180px;
+    }
+
+    .containerFoto {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        margin: -80px auto 2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .descricaoIntroducao {
+        text-align: justify;
+    }
+
+    .tituloIntroducao {
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .logoTexto {
+        font-size: 1.5rem;
+    }
+
+    .tituloIntroducao {
+        font-size: 2rem;
+    }
+
+    .descricaoIntroducao {
+        font-size: 1rem;
+    }
+
+    .projetosCaixas {
+        padding: 1.5rem;
+    }
+
+    .projetoTitulo {
+        font-size: 1.25rem;
+    }
+
+    .botaoDeRedesSociais,
+    .botaoDosProjetos {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .container {
+        max-width: 1600px;
     }
 }
