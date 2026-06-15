@@ -119,12 +119,6 @@ body {
 
 }
 
-.botoesIntroducao {
-    flex-wrap: wrap;
-    display: flex;
-    gap: 1rem;
-    
-}
 
 /* Seção de introdução | Personalizaçào do bloco direito */
 .blocoDireitoIntroducao {
@@ -195,6 +189,21 @@ body {
    
 }
 
+.botoesProjetoWrapper {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.botoesProjetoWrapper .botaoDosProjetos {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; 
+}
+
+
 /* Barra dos filtros */
 .barraFiltros {
     justify-content: center;
@@ -256,9 +265,6 @@ body {
     border-color: #86e0fc;
 }
 
-.categoriaDosProjetos{
-    margin-top: 4rem;
-}
 
 .projetoTitulo {
     margin-bottom: 1rem;

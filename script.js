@@ -1,26 +1,13 @@
-// Com isso vai atualizar o ano automaticamente no footer
 document.addEventListener('DOMContentLoaded', function() {
-    const copyrightElement = document.getElementById('copyright');
-    const currentYear = new Date().getFullYear();                                                              
-
-    copyrightElement.textContent = `© ${currentYear} João Pedro Macena Correa. Todos os direitos reservados.`; 
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    
+    // Atualiza o ano automaticamente no footer
     const copyrightElement = document.getElementById('copyright');
     if (copyrightElement) {
-        const currentYear = new Date().getFullYear();
-        copyrightElement.textContent = `© ${currentYear} João Pedro Macena Correa. Todos os direitos reservados.`;
+        const currentYear = new Date().getFullYear();                                                              
+        copyrightElement.textContent = `© ${currentYear} João Pedro Macena Correa. Todos os direitos reservados.`; 
     }
-});
 
-
-
-// Seção de filtro para os projetos
-document.addEventListener('DOMContentLoaded', function() {
-    const botoesFiltro = document.querySelectorAll('.btn-filtro');
+    // Seção dos filtros para os projetos
+    const botoesFiltro = document.querySelectorAll('.botaoFiltro'); // Corrigido de .btn-filtro para .botaoFiltro
     const todosProjetos = document.querySelectorAll('.projetosCaixas');
     const blocosCategoria = document.querySelectorAll('.categoria-projetos');
 
@@ -30,18 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('ativo');
 
             const filtroSelecionado = this.getAttribute('data-filter');
-            let projetosVisiveis = 0;
 
             todosProjetos.forEach(projeto => {
                 const tecnologias = projeto.getAttribute('data-tech') || "";
                 const periodo = projeto.getAttribute('data-periodo') || "";
 
-                if (filtroSelecionado === 'todos' || 
-                    tecnologias.includes(filtroSelecionado) || 
-                    periodo.includes(filtroSelecionado)) {
-                    
+                if (filtroSelecionado === 'todos' || tecnologias.includes(filtroSelecionado) || periodo.includes(filtroSelecionado)) {
                     projeto.classList.remove('escondido');
-                    projetosVisiveis++;
                 } else {
                     projeto.classList.add('escondido');
                 }
