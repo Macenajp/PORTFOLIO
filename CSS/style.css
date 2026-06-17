@@ -1,3 +1,30 @@
+/* Base / geral da página*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    line-height: 1.6;
+    color: white;
+
+}
+
+
+*:focus-visible { /* Padrão WCAG para acessibilidade visual*/
+    outline: 3px solid #86e0fc; 
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+
+
+
+
 /* Área inicial */
 .header {
     background-color: rgba(18, 18, 18, 0.8);
@@ -5,6 +32,7 @@
     padding: 1rem 0;
     width: 100%;
     top: 0;
+
 }
 
 .nav {
@@ -27,20 +55,8 @@
 
 
 
-/* Fonte e etc */
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #121212;
-    line-height: 1.6;
-    color: white;
-}
-
+/* Geral  */
 .container {
     max-width: 1280px;
     padding: 0 2rem;
@@ -48,7 +64,6 @@ body {
     width: 100%;
 
 }
-
 
 .botaoDeRedesSociais {
     border: 1px solid #86e0fc;
@@ -70,7 +85,11 @@ body {
     background-color: #86e0fc;
     transform: scale(1.1);
     color: #121212;
+
 }
+
+
+
 
 
 /* Apresentação - Sobre mim */
@@ -79,7 +98,11 @@ body {
     flex-wrap: wrap;
     display: flex;
     gap: 1rem;
+
 }
+
+
+
 
 
 /* Seção de introdução Geral */
@@ -91,6 +114,10 @@ body {
     width: 100%;
     
 }
+
+
+
+
 
 /* Seção de introdução | Personalizaçào do bloco esquerdo */
 .blocoEsquerdoIntroducao {    
@@ -123,6 +150,9 @@ body {
     color: #b0b0b0;
 
 }
+
+
+
 
 
 /* Seção de introdução | Personalizaçào do bloco direito */
@@ -197,16 +227,19 @@ body {
 
 .botoesProjetoWrapper {
     display: flex;
-    gap: 1rem;
     width: 100%;
+    gap: 1rem;
+    
+
 }
 
 .botoesProjetoWrapper .botaoDosProjetos {
-    flex: 1;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 0.5rem; /* Dá um espacinho entre a logo do GitHub e a palavra */
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    flex: 1;
+    
 }
 
 
@@ -224,11 +257,11 @@ body {
     background-color: transparent;
     transition: all 0.3s ease;
     border: 1px solid #333;
-    font-size: 0.9rem;
     padding: 0.5rem 1.5rem;
     border-radius: 20px;
-    cursor: pointer;
+    font-size: 0.9rem;
     color: #b0b0b0;
+    cursor: pointer;
     
 }
 
@@ -269,6 +302,7 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     transform: translateY(-5px);
     border-color: #86e0fc;
+
 }
 
 
@@ -335,144 +369,63 @@ body {
     background-color: #1e1e1e;
     text-align: center;
     padding: 2rem 0;
+
 }
 
 
 
 
 
-/* Responsividade geral do site */
-@media (min-width: 1360px) {
-    .container {
-        max-width: 1280px;
-    }
-}
-
-
-@media (max-width: 768px) {
-    .projetos {
-        grid-template-columns: 1fr; 
-    }
-    .barraFiltros {
-        flex-direction: column;
-        align-items: center;
-    }
-    .botaoFiltro {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
+/* Responsividade Mobile e Tablets */
 @media (max-width: 992px) {
     .divisaoIntroducao {
-        flex-direction: column;
+        flex-direction: column-reverse; 
         min-height: auto;
+        padding-top: 3rem;
     }
 
     .blocoEsquerdoIntroducao {
-    padding: 3rem 2rem;
-    order: 2;
+        padding: 2rem 1.5rem 4rem 1.5rem;
+        width: 100%;
+        text-align: center;
     }
 
     .blocoDireitoIntroducao {
-        height: 200px;
-        order: 1;
+        display: none; 
     }
 
     .containerFoto {
-        transform: translate(-50%, -50%);
-        margin-bottom: -100px;
-        position: relative;
+        position: relative; 
+        transform: none; 
+        left: auto;
+        top: auto;
+        margin: 0 auto 2rem auto; 
+        display: block;
+        width: 100%;
         text-align: center;
-        left: 50%;
-        order: 1;
-        top: 0;
-        
     }
 
     .fotoIntroducao {
-        height: 280px;
-        width: 240px;
-    }
-}
-
-
-
-@media (max-width: 992px) {
-
-    .divisaoIntroducao {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .blocoEsquerdoIntroducao {
-        padding: 3rem 2rem;
-        order: 2;
-    }
-
-    .blocoDireitoIntroducao {
-        height: 180px;
-    }
-
-    .containerFoto {
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-        margin: -80px auto 2rem;
-        display: flex;
-        justify-content: center;
+        height: auto;
+        max-width: 250px;
+        width: 100%;
+        margin: 0 auto;
     }
 
     .descricaoIntroducao {
-        text-align: justify;
+        text-align: center;
+        margin: 0 auto 2.5rem auto;
     }
 
-    .tituloIntroducao {
-        margin-inline: auto;
+    .botoesIntroducao, .botoesProjetoWrapper {
+        justify-content: center;
+        flex-direction: column; /* Empilha os botões no mobile */
     }
 }
 
 @media (max-width: 576px) {
-
-    .container {
-        padding: 0 1rem;
-    }
-
-    .logoTexto {
-        font-size: 1.5rem;
-    }
-
-    .tituloIntroducao {
-        font-size: 2rem;
-    }
-
-    .descricaoIntroducao {
-        font-size: 1rem;
-    }
-
-    .projetosCaixas {
-        padding: 1.5rem;
-    }
-
-    .projetoTitulo {
-        font-size: 1.25rem;
-    }
-
-    .botaoDeRedesSociais,
-    .botaoDosProjetos {
-        width: 100%;
-    }
-}
-
-@media (min-width: 1920px) {
-    .container {
-        max-width: 1440px;
-    }
-}
-
-@media (min-width: 2560px) {
-    .container {
-        max-width: 1600px;
-    }
+    .container { padding: 0 1rem; }
+    .logoTexto { font-size: 1.5rem; }
+    .tituloIntroducao { font-size: 2rem; }
+    .projetosCaixas { padding: 1.5rem; }
 }
