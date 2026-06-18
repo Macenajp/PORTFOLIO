@@ -1,4 +1,4 @@
-/* Base / geral da página*/
+/* Código base do site */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -14,11 +14,25 @@ body {
 
 }
 
+.container {
+    max-width: 1280px;
+    padding: 0 2rem;
+    margin: 0 auto;
+    width: 100%;
 
-*:focus-visible { /* Padrão WCAG para acessibilidade visual*/
-    outline: 3px solid #86e0fc; 
-    outline-offset: 4px;
-    border-radius: 2px;
+}
+
+.reveal {
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(40px);
+    opacity: 0;
+
+}
+
+.reveal.ativo {
+    opacity: 1;
+    transform: translateY(0);
+
 }
 
 
@@ -56,15 +70,6 @@ body {
 
 
 
-/* Geral  */
-.container {
-    max-width: 1280px;
-    padding: 0 2rem;
-    margin: 0 auto;
-    width: 100%;
-
-}
-
 .botaoDeRedesSociais {
     border: 1px solid #86e0fc;
     transition: all 0.3s ease;
@@ -85,8 +90,9 @@ body {
     background-color: #86e0fc;
     transform: scale(1.1);
     color: #121212;
-
+    
 }
+
 
 
 
@@ -94,7 +100,7 @@ body {
 
 /* Apresentação - Sobre mim */
 .botoesIntroducao {
-    justify-content: center;
+    justify-content: left;
     flex-wrap: wrap;
     display: flex;
     gap: 1rem;
@@ -107,45 +113,46 @@ body {
 
 /* Seção de introdução Geral */
 .divisaoIntroducao {
+    align-items: center;
     position: relative;
-    min-height: 80vh;
+    min-height: 85vh;
     overflow: hidden;
     display: flex;
     width: 100%;
-    
+
 }
 
 
 
 
 
-/* Seção de introdução | Personalizaçào do bloco esquerdo */
+/* Seção de introdução | Bloco Esquerdo */
 .blocoEsquerdoIntroducao {    
-    padding: 4rem 3rem 4rem 10%;
     background-color: #121212;
-    align-items: center;
+    padding: 4rem 12% 4rem 10%;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    min-height: 85vh;
     display: flex;
     z-index: 1;
-    flex: 1.2;
-    
-}
+    width: 60%;
 
+}
 
 .tituloIntroducao {
     font-size: clamp(2rem, 4vw, 3.5rem);
     margin-bottom: 1.5rem;
-    max-width: 550px;
     font-weight: 700;
-    color: #86e0fc;
     line-height: 1.2;
-
+    color: #86e0fc;
+    
 }
 
 .descricaoIntroducao {
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
     margin-bottom: 2.5rem;
     text-align: justify;
-    font-size: 1.1rem;
-    max-width: 610px;
     line-height: 1.7;
     color: #b0b0b0;
 
@@ -155,13 +162,13 @@ body {
 
 
 
-/* Seção de introdução | Personalizaçào do bloco direito */
+/* Seção de introdução | Bloco Direito */
 .blocoDireitoIntroducao {
     background-color: #86e0fc; 
-    flex: 0.8;
-
+    min-height: 85vh;
+    width: 40%; 
+    
 }
-
 
 
 
@@ -172,28 +179,28 @@ body {
     transform: translate(-50%, -50%);
     position: absolute;
     z-index: 10;
-    scale: 1.2;
-    left: 65%;
-    top: 57%;
+    left: 60%; 
+    top: 50%;
     
+    
+    
+
 }
 
 .fotoIntroducao {
+    transition: transform .3s ease, border 0.6s ease;
     box-shadow: 0 20px 40px rgba(0,0,0,.4);
-    transition: transform .3s ease;
-    width: min(320px, 85vw);
-    aspect-ratio: 320 / 380;
+    width: clamp(220px, 22vw, 340px);
+    aspect-ratio: 4 / 5;
     border-radius: 4px;
     object-fit: cover;
-    height: auto;
     
 }
 
 .fotoIntroducao:hover {
-    transition: border 0.6s ease;
     border: 2px solid #86e0fc; 
     transform: scale(1.05);
-    
+
 }
 
 
@@ -229,7 +236,6 @@ body {
     display: flex;
     width: 100%;
     gap: 1rem;
-    
 
 }
 
@@ -239,7 +245,7 @@ body {
     display: flex;
     gap: 0.5rem;
     flex: 1;
-    
+
 }
 
 
@@ -250,6 +256,7 @@ body {
     flex-wrap: wrap;
     display: flex;
     gap: 1rem;
+
 }
 
 .botaoFiltro {
@@ -257,9 +264,9 @@ body {
     background-color: transparent;
     transition: all 0.3s ease;
     border: 1px solid #333;
+    font-size: 0.9rem;
     padding: 0.5rem 1.5rem;
     border-radius: 20px;
-    font-size: 0.9rem;
     color: #b0b0b0;
     cursor: pointer;
     
@@ -302,7 +309,6 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     transform: translateY(-5px);
     border-color: #86e0fc;
-
 }
 
 
@@ -369,63 +375,208 @@ body {
     background-color: #1e1e1e;
     text-align: center;
     padding: 2rem 0;
-
 }
 
 
+
+
+
+/* Responsividade geral do site */
+@media (min-width: 1360px) {
+    .container {
+        max-width: 1280px;
+
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .projetos {
+        grid-template-columns: 1fr; 
+
+    }
+
+    .barraFiltros {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .botaoFiltro {
+        max-width: 300px;
+        width: 100%;
+
+    }
+}
+
+
+
+
+
+@media (max-width: 992px) {
+    .divisaoIntroducao {
+        flex-direction: column;
+        min-height: auto;
+
+    }
+
+    .blocoEsquerdoIntroducao {
+        padding: 2rem 1.5rem 4rem 1.5rem;
+        text-align: center;
+        min-height: auto;
+        width: 100%;
+
+    }
+
+    .blocoDireitoIntroducao {
+        height: 200px;
+        order: 1;
+
+    }
+
+    .containerFoto {
+        transform: translate(-50%, -50%);
+        margin-bottom: -100px;
+        position: relative;
+        text-align: center;
+        left: 50%;
+        order: 1;
+        top: 0;
+        
+    }
+
+    .fotoIntroducao {
+        width: clamp(200px, 60vw, 280px); /* Fica perfeita em qualquer celular */
+        margin: 0 auto;
+
+    }
+}
 
 
 
 /* Responsividade Mobile e Tablets */
 @media (max-width: 992px) {
     .divisaoIntroducao {
-        flex-direction: column-reverse; 
+        flex-direction: column; 
+        padding-top: 4rem; 
         min-height: auto;
-        padding-top: 3rem;
+        
     }
 
     .blocoEsquerdoIntroducao {
         padding: 2rem 1.5rem 4rem 1.5rem;
-        width: 100%;
         text-align: center;
+        min-height: auto;
+        width: 100%;
+        order: 2;
+
     }
 
     .blocoDireitoIntroducao {
-        display: none; 
+        display: none !important;
+
     }
 
     .containerFoto {
-        position: relative; 
-        transform: none; 
+        margin: 0 auto 2rem auto;
+        justify-content: center;
+        position: relative;
+        transform: none;
+        display: flex;
+        width: 100%;
+        z-index: 10;
         left: auto;
         top: auto;
-        margin: 0 auto 2rem auto; 
-        display: block;
-        width: 100%;
-        text-align: center;
+        order: 1;
+
     }
 
     .fotoIntroducao {
-        height: auto;
-        max-width: 250px;
-        width: 100%;
+        width: clamp(200px, 60vw, 280px);
+        aspect-ratio: 4 / 5;
         margin: 0 auto;
+
     }
 
     .descricaoIntroducao {
-        text-align: center;
         margin: 0 auto 2.5rem auto;
+        text-align: center;
+
     }
 
-    .botoesIntroducao, .botoesProjetoWrapper {
+    .botoesIntroducao {
         justify-content: center;
-        flex-direction: column; /* Empilha os botões no mobile */
+
     }
 }
 
+
+
+
+
 @media (max-width: 576px) {
-    .container { padding: 0 1rem; }
-    .logoTexto { font-size: 1.5rem; }
-    .tituloIntroducao { font-size: 2rem; }
-    .projetosCaixas { padding: 1.5rem; }
+
+    .container {
+        padding: 0 1rem;
+
+    }
+
+    .logoTexto {
+        font-size: 1.5rem;
+
+    }
+
+    .tituloIntroducao {
+        font-size: 2rem;
+
+    }
+
+
+    .descricaoIntroducao {
+        font-size: 1rem;
+
+    }
+
+    .projetosCaixas {
+        padding: 1.5rem;
+
+    }
+
+    .projetoTitulo {
+        font-size: 1.25rem;
+
+    }
+
+    .botaoDeRedesSociais,
+    .botaoDosProjetos {
+        width: 100%;
+
+    }
+}
+
+
+
+
+
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1440px;
+
+    }
+}
+
+
+
+
+
+
+@media (min-width: 2560px) {
+    .container {
+        max-width: 1600px;
+
+    }
 }
