@@ -40,3 +40,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function revelarElementos() {
+        const elementos = document.querySelectorAll('.reveal');
+        const alturaJanela = window.innerHeight;
+        const pontoDeRevelacao = 100; // Distância do fundo da tela
+
+        elementos.forEach(elemento => {
+            const topoElemento = elemento.getBoundingClientRect().top;
+            if (topoElemento < alturaJanela - pontoDeRevelacao) {
+                elemento.classList.add('ativo');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revelarElementos);
+    revelarElementos();
