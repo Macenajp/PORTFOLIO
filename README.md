@@ -1,26 +1,37 @@
-# Portfólio Acadêmico | João Pedro M. Correa
+# Portfólio | João Pedro M. Correa
+
+<br>
 <br>
 
 ## Sobre:
-
-Este repositório contém os códigos do meu portfólio pessoal. Ele foi criado com o objetivo de apresentar os projetos que desenvolvi durante meus estudos no curso de Ciência da Computação na PUCPR.
-
+<p>Voltado para a apresentação dos principais projetos em desenvolvimento e àqueles já finalizados, tanto do âmbito acadêmico quanto do pessoal. Sempre mantendo atualizado e funcional.</p>
 
 <br>
-
-## Seções:
-
-* **Sobre Mim:** Uma breve introdução sobre minha trajetória, meus interesses na área de tecnologia e objetivos de carreira.
-* **Projetos:** Uma galeria com os principais trabalhos acadêmicos (até o momento, apenas do primeiro do período), cada um com sua descrição, tecnologias utilizadas e link para o código-fonte.
-* **Links de Contato:** Acesso rápido ao meu GitHub, LinkedIn e E-mail.
+## Seções do site:
+* **Descrição:** Breve apresentação pessoal.
+* **Redes Sociais:** Botões com links que direcionam o usuário para as redes sociais determinadas.
+* **Projetos:** Exposição dos principais projetos, começando pelos pessoais, e em seguida, alguns feitos (propostos) pela instituição. 
 
 <br>
-
-<!--
-## Objetivos:
-
-* **Aprendizado Prático:** Aplicar e consolidar os conhecimentos adquiridos em aula sobre desenvolvimento web.
-* **Visibilidade Profissional:** Criar uma plataforma para apresentar meu trabalho e estudo para recrutadores, professores e colegas da área.
+## Estrutura das pastas e arquivos:
+``` text
+PORTFOLIO/
+├── .github/
+│   └── FUNDING.yml
+├── CSS/
+│   └── style.css
+├── IMG/
+│   └── favicon.png
+│   └── profilePic - WBackground.png
+│   └── profilePic.png
+├── _headers
+├── index.html
+├── LICENCE
+├── README.md
+└── script.js
+```
 
 <br>
--->
+## Tecnologias:
+- HMTL, CSS & JavaScript;
+- Futuras: Python;
