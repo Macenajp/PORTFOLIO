@@ -1,37 +1,27 @@
 # Portfólio | João Pedro M. Correa
 
-<br>
-<br>
+## Sobre
+Este espaço é voltado para a apresentação dos meus principais projetos em desenvolvimento e daqueles já finalizados, tanto no âmbito acadêmico quanto pessoal. O objetivo é manter o portfólio sempre atualizado e funcional.
 
-## Sobre:
-<p>Voltado para a apresentação dos principais projetos em desenvolvimento e àqueles já finalizados, tanto do âmbito acadêmico quanto do pessoal. Sempre mantendo atualizado e funcional.</p>
-
-<br>
-## Seções do site:
+## Seções do Site
 * **Descrição:** Breve apresentação pessoal.
-* **Redes Sociais:** Botões com links que direcionam o usuário para as redes sociais determinadas.
-* **Projetos:** Exposição dos principais projetos, começando pelos pessoais, e em seguida, alguns feitos (propostos) pela instituição. 
+* **Redes Sociais:** Botões com links que direcionam o usuário para as minhas redes sociais.
+* **Projetos:** Exposição dos principais projetos, começando pelos pessoais e, em seguida, alguns propostos e desenvolvidos no contexto institucional. 
 
-<br>
-## Estrutura das pastas e arquivos:
-``` text
+## Estrutura de Pastas e Arquivos
+
+```text
 PORTFOLIO/
 ├── .github/
 │   └── FUNDING.yml
 ├── CSS/
 │   └── style.css
 ├── IMG/
-│   └── favicon.png
-│   └── profilePic - WBackground.png
+│   ├── favicon.png
+│   ├── profilePic - WBackground.png
 │   └── profilePic.png
 ├── _headers
 ├── index.html
-├── LICENCE
+├── LICENSE
 ├── README.md
 └── script.js
-```
-
-<br>
-## Tecnologias:
-- HMTL, CSS & JavaScript;
-- Futuras: Python;
