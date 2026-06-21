@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+
 function revelarElementos() {
         const elementos = document.querySelectorAll('.reveal');
         const alturaJanela = window.innerHeight;
@@ -56,3 +58,31 @@ function revelarElementos() {
 
     window.addEventListener('scroll', revelarElementos);
     revelarElementos();
+
+
+
+function toggleTheme() {
+    const body = document.body;
+    const iconeSol = document.querySelector('.iconeSol');
+    const iconeLua = document.querySelector('.iconeLua');
+    const fotoPerfil = document.querySelector('.fotoIntroducao');
+
+    body.classList.toggle('temaClaro');
+
+    if (body.classList.contains('temaClaro')) {
+        iconeSol.style.display = 'inline';
+        iconeLua.style.display = 'none';
+        
+        if (fotoPerfil) fotoPerfil.src = 'IMG/profilePic - WBackground.png';
+        
+        localStorage.setItem('tema', 'claro');
+        
+    } else {
+        iconeSol.style.display = 'none';
+        iconeLua.style.display = 'inline';
+        
+        if (fotoPerfil) fotoPerfil.src = 'IMG/profilePic.png';
+        
+        localStorage.setItem('tema', 'escuro');
+    }
+}
